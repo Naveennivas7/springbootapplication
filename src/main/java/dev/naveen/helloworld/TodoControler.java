@@ -20,7 +20,25 @@ public class TodoControler {
 
     //request param
     @GetMapping("")
-    String gettodobyidparam(@RequestParam int id) {
+    String gettodobyidparam(@RequestParam("todoid") int id) {
         return "todo with id  "+id;
     }
+
+    @PostMapping("/create")
+    String createuser(@RequestBody String body) {
+        return body;
+    }
+
+
+
+    @PutMapping ("/{id}")
+    String updatetodobyid(@PathVariable long id){
+        return "update todo with id "+ id;
+    }
+
+    @DeleteMapping ("/{id}")
+    String deletetodobyid(@PathVariable long id){
+        return "delete todo with id "+ id;
+    }
+
 }
