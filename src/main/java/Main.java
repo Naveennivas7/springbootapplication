@@ -1,8 +1,4 @@
-import dev.naveen.helloworld.TodoService;
+package PACKAGE_NAME;
 
 public class Main {
-    public static void main(String []args){
-        TodoService todoService=new TodoService();
-        todoService.getTodo();
-    }
 }
