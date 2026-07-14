@@ -1,6 +1,9 @@
 package dev.naveen.helloworld;
 
+import dev.naveen.helloworld.models.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -29,8 +32,9 @@ public class TodoControler {
     }
 
     @PostMapping("/create")
-    String createuser(@RequestBody String body) {
-        return body;
+    ResponseEntity<Todo> createuser(@RequestBody Todo todo) {
+                return new ResponseEntity<>(todoService.createTodo(todo), HttpStatus.CREATED);
+
     }
 
 

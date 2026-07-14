@@ -1,11 +1,10 @@
 package dev.naveen.helloworld;
 
-import org.springframework.stereotype.Component;
 
-@Component
+import dev.naveen.helloworld.models.Todo;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class TodoRepository {
-    String getAllTodos(){
-        return "Todos";
-    }
+//CRUD -create read update delete
+public interface TodoRepository implements JpaRepository<Todo,Long> {
+
 }

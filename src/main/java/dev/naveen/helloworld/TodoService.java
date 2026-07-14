@@ -1,5 +1,6 @@
 package dev.naveen.helloworld;
 
+import dev.naveen.helloworld.models.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,9 +10,11 @@ public class TodoService {
     private TodoRepository todoRepositary;
 
 
-
-    public void getTodo(){
-        System.out.println(todoRepositary.getAllTodos());
+    public Todo createTodo(Todo todo){
+        return todoRepositary.save(todo);
     }
+
+
+
 
 }
